@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 公路赔（补）偿案件管理文书送达回证 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="10.5" offset="-1,11" />
+	<pdf:content>
+		<pdf:text point="40.5,15.5" fontName="SimHei" fontSize="20.5">公路赔（补）偿案件管理文书送达回证</pdf:text>
+		<pdf:text point="124,27">案件（</pdf:text>
+		<pdf:text point="140,27" static="NO">{{ case.mark2  }}</pdf:text>
+		<pdf:text point="150,27">）年（</pdf:text>
+		<pdf:text point="167,34" static="NO">{{ case.mark3 }}</pdf:text>
+		<pdf:text point="177,34">）号</pdf:text>
+		<pdf:table rect="{21,39.5},{170,200}" borderWidth="1.0" lineWidth="0.5" padding="1">
+			<pdf:tr height="11">
+				<pdf:td width="170">
+					<pdf:text point="mid-left:2,6">受送达人：</pdf:text>
+					<pdf:text point="mid-left:24,6" static="NO">{{ recipient }}</pdf:text>
+				</pdf:td>		
+			</pdf:tr>
+			<pdf:tr height="11">
+				<pdf:td width="170">
+					<pdf:text point="mid-left:2,6">案由：</pdf:text>
+					<pdf:text point="mid-left:15,6" static="NO">{{ caseSummary }}</pdf:text>
+				</pdf:td>			
+			</pdf:tr>
+			<pdf:tr height="11">
+				<pdf:td width="170">
+					<pdf:text point="mid-left:2,6">送达单位：</pdf:text>
+					<pdf:text point="mid-left:24,6" static="NO">{{ serviceUnit }}</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="11">
+				<pdf:td width="170">
+					<pdf:text point="mid-left:2,6">送达地点：</pdf:text>
+					<pdf:text point="mid-left:24,6" static="NO">{{ addressForService }}</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="11">
+				<pdf:td width="38">送达文书名称</pdf:td>
+				<pdf:td width="38">送达人</pdf:td>
+				<pdf:td width="38">收到日期</pdf:td>
+				<pdf:td width="56">收件人签章</pdf:td>
+			</pdf:tr>
+			{{#items}} {{! 传入的items必须有3项 }}
+			<pdf:tr height="11">
+				<pdf:td width="38" textAlignment="left" static="NO">{{ .docName }}</pdf:td>
+				<pdf:td width="38"></pdf:td>
+				<pdf:td width="38"></pdf:td>
+				<pdf:td width="56"></pdf:td>
+			</pdf:tr>
+			{{/items}}
+			<pdf:tr height="112">
+				<pdf:td width="170">
+					<pdf:text point="2,2">备注:</pdf:text>
+					<pdf:paragraph rect="{2,6},{166,103}" lineHeight="6" static="NO">{{ comment }}</pdf:paragraph>
+				</pdf:td>
+			</pdf:tr>
+		</pdf:table>
+        <pdf:paragraph rect="{23,239.5},{166,30}" lineHeight="5">
+            注：1、如送达人不在场的，可交其同住的成年家属，并在备注栏内写明与受送达人关系；\n    2、受送达人已指定代收人的，交代收人签收；\n    3、受送达人拒收的，应邀有关基层组织代表或其他人到场，在备注中写明拒收事由\n       及有关情况，并将文书留置，视为已送达
+        </pdf:paragraph>
+	</pdf:content>
+</pdf:template>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 路政违法案件  现场勘验图 }}
+	<pdf:paper width="841.89" height="595.276" fontName="SimSun" fontSize="11" offset="0,-3"/>
+	<pdf:content>
+		<pdf:text point="108,20" fontSize="20.5">公路违法案件现场勘验图</pdf:text>
+		<pdf:text point="211,33">案号（</pdf:text>
+        <pdf:text point="225,33" static="NO" maxWidth="15">{{ caseWord }}</pdf:text>
+        <pdf:text point="239,33">）字第（</pdf:text>
+        <pdf:text point="257,33" static="NO" maxWidth="15">{{ caseNo }}</pdf:text>
+        <pdf:text point="271,33">）号</pdf:text>
+		<pdf:table rect="{14,40},{265,154.5}" borderWidth="0.5" lineWidth="0.5" padding="1">
+			<pdf:tr height="11">
+				<pdf:td width="12.5">时间</pdf:td>
+				<pdf:td width="71.5">
+					<pdf:text point="mid-left:1.5,5.5" static="NO">{{ date.year }}</pdf:text>
+					<pdf:text point="mid-left:14.5,5.5">年</pdf:text>
+					<pdf:text point="mid-left:18,5.5" static="NO">{{ date.month }}</pdf:text>
+					<pdf:text point="mid-left:28,5.5">月</pdf:text>
+					<pdf:text point="mid-left:32,5.5" static="NO">{{ date.day }}</pdf:text>
+					<pdf:text point="mid-left:41.5,5.5">日</pdf:text>
+					<pdf:text point="mid-left:45,5.5" static="NO">{{ date.hour }}</pdf:text>
+					<pdf:text point="mid-left:55,5.5">时</pdf:text>
+					<pdf:text point="mid-left:59,5.5" static="NO">{{ date.minute }}</pdf:text>
+					<pdf:text point="mid-left:68,5.5">分</pdf:text>
+                </pdf:td>
+				<pdf:td width="12.5">地点</pdf:td>
+				<pdf:td width="84">
+                    <pdf:text point="mid-left:3.5,5.5" static="NO">{{ place.gaosu }}</pdf:text>
+					<pdf:text point="mid-left:16,5.5">高速</pdf:text>
+					<pdf:text point="mid-left:24.5,5.5" static="NO" maxWidth="14.5">{{ place.fangxiang }}</pdf:text>
+					<pdf:text point="mid-left:38,5.5">方向 K</pdf:text>
+					<pdf:text point="mid-left:53,5.5" static="NO">{{ place.k }}</pdf:text>
+					<pdf:text point="mid-left:62.5,5.5">+</pdf:text>
+					<pdf:text point="mid-left:66,5.5" static="NO">{{ place.m }}</pdf:text>
+					<pdf:text point="mid-left:79,5.5">m</pdf:text>
+                </pdf:td>
+				<pdf:td width="21">违法项目</pdf:td>
+				<pdf:td width="34" fontSize="9" textAlignment="left">
+                    <pdf:paragraph rect="{1,0},{33,12}" lineHeight="3.5" indent="head:0" static="NO">{{ eventReason }}</pdf:paragraph>
+                </pdf:td>
+                
+                <pdf:td width="12.5">天气</pdf:td>
+				<pdf:td width="17" static="NO" textAlignment="left">
+                    <pdf:text point="mid-left:2.5,6" static="NO">{{ weater }}</pdf:text>
+                </pdf:td>
+			</pdf:tr>
+			<pdf:tr height="111">
+				<pdf:td width="265">
+					<pdf:image rect="{0,0},{265,111}" url="{{ imagePath }}" static="NO"/>
+					<pdf:grid rect="{0,0},{265,111}" row="26" column="62" alpha="0.3" />
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="6.5">
+				<pdf:td width="265">
+					<pdf:text point="2,1">说明：</pdf:text>
+					<pdf:paragraph rect="{2,-0.5},{264,22}" lineHeight="6.35" indent="head:13" static="NO">{{ comment }}</pdf:paragraph>
+				</pdf:td>
+			</pdf:tr>
+            <pdf:tr height="6.5"><pdf:td width="265"></pdf:td></pdf:tr>
+            <pdf:tr height="6.5"><pdf:td width="265"></pdf:td></pdf:tr>
+            <pdf:tr height="6.5"><pdf:td width="265"></pdf:td></pdf:tr>
+            <pdf:tr height="6.5"><pdf:td width="265"></pdf:td></pdf:tr>
+		</pdf:table>
+		<pdf:text point="17,197">绘图人（签名）：</pdf:text>
+        
+        <!--
+         <pdf:text point="53,187" static="NO">{{ draftsman }}</pdf:text>
+         -->
+		<pdf:text point="85,197">勘查人（签名）：</pdf:text>
+        
+        <!--
+         <pdf:text point="112,187" static="NO">{{ inquestman  }}</pdf:text>
+         -->
+        
+		<pdf:text point="150,197">当事人（签名）：</pdf:text>
+        
+        <pdf:text point="210,197">见证人（签名）：</pdf:text>
+	</pdf:content>
+</pdf:template>

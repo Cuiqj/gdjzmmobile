@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 公路违法案件 公路违法案件告知表 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="13" offset="3.5,0" />
+	<pdf:content>
+		<pdf:text point="67,23" fontName="SimHei" fontSize="20.5">公路违法案件告知表</pdf:text>
+		<pdf:text point="10,35" fontName="SimHei" fontSize="15">告知单位：（盖章）</pdf:text>
+		<pdf:table rect="{5,43},{190,219}" borderWidth="0.01" lineWidth="0.5" padding="1">
+			<pdf:tr height="33">
+				<pdf:td width="12.8" textAlignment="center">
+				    <pdf:text point="2,12">案件</pdf:text>
+					<pdf:text point="2,17">编号</pdf:text>
+				</pdf:td>
+				<pdf:td width="17" textAlignment="center" static="NO">
+					<pdf:text point="1.5,12">[{{ case_mark2 }}]</pdf:text>
+					<pdf:text point="1.5,17">{{ full_case_mark3 }}</pdf:text>
+				</pdf:td>
+				<pdf:td width="18" textAlignment="center">
+					<pdf:text point="3,12">被告知</pdf:text>
+					<pdf:text point="5,17">单位</pdf:text>
+				</pdf:td>
+				<pdf:td width="34" textAlignment="center">
+					<pdf:text point="3,12" fontSize="10">中山市交通运输局</pdf:text>
+					<pdf:text point="5,17" fontSize="10">综合执行执法局</pdf:text>
+				</pdf:td>
+				<pdf:td width="11" textAlignment="center">
+					<pdf:text point="1,12">告知</pdf:text>
+					<pdf:text point="1,17">时间</pdf:text>
+				</pdf:td>
+				<pdf:td width="38" textAlignment="center" static="NO">{{ informingDate }}</pdf:td>
+				<pdf:td width="26" textAlignment="center">
+					<pdf:text point="3,1">告知方式</pdf:text>
+					<pdf:text point="1,7">（如电话、</pdf:text>
+					<pdf:text point="0,12">传真、邮寄、</pdf:text>
+					<pdf:text point="2,17">电子邮件、</pdf:text>
+					<pdf:text point="3,22">直接送达</pdf:text>
+					<pdf:text point="4,27">等）</pdf:text>
+				</pdf:td>
+				<pdf:td width="33" textAlignment="center" static="NO">{{ informingMethod }}</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="80">
+				<pdf:td width="12.8" textAlignment="center">
+				    <pdf:text point="2,25">案件</pdf:text>
+					<pdf:text point="2,30">发生</pdf:text>
+					<pdf:text point="2,35">的基</pdf:text>
+					<pdf:text point="2,40">本情</pdf:text>
+					<pdf:text point="4,45">况</pdf:text>
+
+					
+					
+					<pdf:text point="26,5">时间</pdf:text>
+					<pdf:text point="49,5" static="NO">{{ time }}</pdf:text>
+					<pdf:text point="100,5">地点</pdf:text>
+					<pdf:paragraph rect="{133,2},{55,30}" lineHeight="5" static="NO">{{ location }}</pdf:paragraph>
+					<pdf:paragraph rect="{15,16},{173,80}" indent="head:10" lineHeight="5" static="NO">{{ caseBaseContent }}</pdf:paragraph>
+					<!--时间右边框线-->
+					<pdf:line fromPoint="47.8,0" toPoint="47.8,15" lineWidth="0.5"/>
+					<!--时间填写内容右边框线-->
+					<pdf:line fromPoint="81.8,0" toPoint="81.8,15" lineWidth="0.5"/>
+					<!--地点右边框线-->
+					<pdf:line fromPoint="130.8,0" toPoint="130.8,15" lineWidth="0.5"/>
+					<!--底部-->
+					<pdf:line fromPoint="13,15" toPoint="190,15" lineWidth="0.5"/>
+				</pdf:td>
+				<pdf:td width="177" textAlignment="center">
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="50.3">
+				<pdf:td width="13" textAlignment="center">
+					<pdf:text point="2,10">公路</pdf:text>
+					<pdf:text point="2,15">管理</pdf:text>
+					<pdf:text point="2,20">机构</pdf:text>
+					<pdf:text point="2,25">处理</pdf:text>
+					<pdf:text point="2,30">建议</pdf:text>
+				</pdf:td>
+				<pdf:td width="177" textAlignment="center">
+					<pdf:paragraph rect="{2,2},{173,80}" indent="head:10" lineHeight="5" static="NO">{{ caseBaseContent }}</pdf:paragraph>
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="19.4">
+				<pdf:td width="30" textAlignment="center">
+					<pdf:text point="1,5">接报单位联系</pdf:text>
+					<pdf:text point="1,10">人和联系电话</pdf:text>
+				</pdf:td>
+				<pdf:td width="56" textAlignment="center">
+					
+				</pdf:td>
+				<pdf:td width="44" textAlignment="center">
+					<pdf:text point="10,8">接报人签名</pdf:text>
+				</pdf:td>
+				<pdf:td width="60" textAlignment="center">
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="22">
+				<pdf:td width="30" textAlignment="center">
+					<pdf:text point="10,10">抄报</pdf:text>
+				</pdf:td>
+				<pdf:td width="160" textAlignment="center" static="NO">
+					{{ receptionPerson }}
+				</pdf:td>
+			</pdf:tr>
+			<pdf:tr height="18">
+				<pdf:td width="190" textAlignment="center">
+					<pdf:text point="2,7">告知单位联系人：</pdf:text>
+					<pdf:text point="36,7" static="NO">{{ linkman }}</pdf:text>
+					<pdf:text point="80,7">联系电话：</pdf:text>
+					<pdf:text point="100,7" static="NO">{{ phone }}</pdf:text>
+					<pdf:text point="125,7">传真：</pdf:text>
+					<pdf:text point="135.5,7" static="NO">{{ fax }}</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+		</pdf:table>
+		<pdf:text point="8,269">备注：本表一式两份，一份送综合行政执法结构，一份公路管理机构存档。</pdf:text>
+	</pdf:content>
+</pdf:template>

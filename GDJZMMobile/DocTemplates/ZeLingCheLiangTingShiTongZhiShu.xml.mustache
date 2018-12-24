@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 责令车辆停驶通知书 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="13" />
+	<pdf:content>
+		<pdf:table rect="{13,8.5},{188,128.5}" borderWidth="0.5">
+			<pdf:tr height="128.5">
+				<pdf:td width="188">
+					<pdf:text point="57.5,9.5" fontName="SimHei" fontSize="21.5">责令车辆停驶通知书</pdf:text>
+					<pdf:line fromPoint="6,27" toPoint="59,27" lineWidth="0.5" />
+					<pdf:text point="10,22" static="NO" maxWidth="45" >{{ citizenName }}</pdf:text>
+					<pdf:text point="61,22.5">：</pdf:text>
+					<pdf:text point="10,34">你于</pdf:text>
+					<pdf:line fromPoint="20,38.8" toPoint="36,38.8" lineWidth="0.5" />
+					<pdf:text point="23,33.8" static="NO">{{ happenDate.year }}</pdf:text>
+					<pdf:text point="36.5,34">年</pdf:text>
+					<pdf:line fromPoint="43,38.8" toPoint="60,38.8" lineWidth="0.5" />
+					<pdf:text point="50,33.8" maxWidth="" static="NO">{{ happenDate.month }}</pdf:text>
+					<pdf:text point="61,34">月</pdf:text>
+					<pdf:line fromPoint="67.5,38.8" toPoint="84,38.8" lineWidth="0.5" />
+					<pdf:text point="74,33.8" static="NO">{{ happenDate.day }}</pdf:text>
+					<pdf:text point="85,34">日 驾驶牌号为</pdf:text>
+					<pdf:line fromPoint="120,38.8" toPoint="166,38.8" lineWidth="0.5" />
+					<pdf:text point="127,33.8" maxWidth="" static="NO">{{ automobileNumber }}</pdf:text>
+					<pdf:text point="168,34">的车辆，</pdf:text>
+					<pdf:text point="2,47.5">在</pdf:text>
+					<pdf:line fromPoint="9,52.2" toPoint="46,52.2" lineWidth="0.5" />
+					<pdf:text point="10,47.2" maxWidth="37" static="NO">{{ placePrefix }}</pdf:text>
+					<pdf:text point="48.5,47.5">公路K</pdf:text>
+					<pdf:line fromPoint="64,52.2" toPoint="110,52.2" lineWidth="0.5" />
+					<pdf:text point="67,47.5" maxWidth="43" static="NO">{{ stationStart }}</pdf:text>
+					<pdf:text point="111,47.5">因</pdf:text>
+					<pdf:line fromPoint="118,52.2" toPoint="174,52.2" lineWidth="0.5" />
+					<pdf:text point="119,47.5" maxWidth="55" static="NO">{{ caseDescription }}</pdf:text>
+					<pdf:text point="177,47.5">根据</pdf:text>
+					<pdf:text point="1,60.5">①《中华人民共和国公路法》第</pdf:text>
+					<pdf:line fromPoint="69,65" toPoint="86,65" lineWidth="0.5" />
+					<pdf:text point="71.5,60" static="YES">八十五</pdf:text>
+					<pdf:text point="88,60.5">条第</pdf:text>
+					<pdf:line fromPoint="99,65" toPoint="115,65" lineWidth="0.5" />
+					<pdf:text point="104,60" static="YES">二</pdf:text>
+					<pdf:text point="115.5,60.5">款、②《路政管理规定》第</pdf:text>
+					<pdf:line fromPoint="170,65" toPoint="183,65" lineWidth="0.5" />
+					<pdf:text point="170,60" maxWidth="13" static="YES">三十八</pdf:text>
+					<pdf:text point="183,60.5">条</pdf:text>
+					<pdf:text point="1,73.5">之规定，现责令你将该车辆临时停放于</pdf:text>
+					<pdf:line fromPoint="94,78.2" toPoint="185,78.2" lineWidth="0.5" />
+					<pdf:text point="95,73.2" maxWidth="90" static="NO">{{ parkingAddress }}</pdf:text>
+					<pdf:text point="186,73.5">，</pdf:text>
+					<pdf:text point="1,84">并在收到本通知书之日起</pdf:text>
+					<pdf:line fromPoint="62,89" toPoint="77,89" lineWidth="0.5" />
+					<pdf:text point="66,84" maxWidth="12" static="NO">{{ periodLimit }}</pdf:text>
+					<pdf:text point="78.5,84">日内到</pdf:text>
+					<pdf:line fromPoint="95,89" toPoint="162,89" lineWidth="0.5" />
+					<pdf:text point="96,84" maxWidth="65" static="NO">{{ officeAddress }}</pdf:text>
+					<pdf:text point="163,84">接受处理。</pdf:text>
+					<pdf:text point="27,103">特此通知</pdf:text>
+					<pdf:text point="117,107">（执法机关印章）</pdf:text>
+					<pdf:text point="120.5,114">年    月    日</pdf:text>
+					<pdf:text point="7.5,118" fontSize="10.5">（第一联：交当事人）</pdf:text>
+				</pdf:td>
+			</pdf:tr>
+		</pdf:table>
+	</pdf:content>
+</pdf:template>

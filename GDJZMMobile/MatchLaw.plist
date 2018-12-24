@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>case_desc_match_law</key>
+	<dict>
+		<key>970</key>
+		<dict>
+			<key>content</key>
+			<string>损坏公路附属设施</string>
+			<key>payLaw</key>
+			<array>
+				<string>广东省《损坏公路路产赔偿标准》（粤交路[1998]38号、[1999]263号）</string>
+			</array>
+			<key>matchLaw</key>
+			<array>
+				<string>《中华人民共和国公路法》 第八十五条第一款</string>
+				<string>《广东省公路条例》 第二十三条</string>
+			</array>
+			<key>breakLaw</key>
+			<array>
+				<string>《中华人民共和国公路法》 第五十二条</string>
+			</array>
+		</dict>
+		<key>971</key>
+		<dict>
+			<key>content</key>
+			<string>造成公路路面损坏、污染</string>
+			<key>payLaw</key>
+			<array>
+				<string>广东省《损坏公路路产赔偿标准》（粤交路[1998]38号、[1999]263号）</string>
+			</array>
+			<key>matchLaw</key>
+			<array>
+				<string>《中华人民共和国公路法》 第八十五条第一款</string>
+				<string>《广东省公路条例》 第二十三条</string>
+			</array>
+			<key>breakLaw</key>
+			<array>
+				<string>《中华人民共和国公路法》 第四十六条</string>
+				<string>《中华人民共和国公路法》 第五十二条</string>
+			</array>
+		</dict>
+		<key>972</key>
+		<dict>
+			<key>content</key>
+			<string>造成公路路面损坏</string>
+			<key>payLaw</key>
+			<array>
+				<string>广东省《损坏公路路产赔偿标准》（粤交路[1998]38号、[1999]263号）</string>
+			</array>
+			<key>matchLaw</key>
+			<array>
+				<string>《中华人民共和国公路法》 第八十五条第一款</string>
+				<string>《广东省公路条例》 第二十三条</string>
+			</array>
+			<key>breakLaw</key>
+			<array>
+				<string>《中华人民共和国公路法》 第五十二条</string>
+			</array>
+		</dict>
+		<key>973</key>
+		<dict>
+			<key>content</key>
+			<string>造成公路路面污染</string>
+			<key>payLaw</key>
+			<array>
+				<string>广东省《损坏公路路产赔偿标准》（粤交路[1998]38号、[1999]263号）</string>
+			</array>
+			<key>matchLaw</key>
+			<array>
+				<string>《中华人民共和国公路法》 第八十五条第一款</string>
+				<string>《广东省公路条例》 第二十三条</string>
+			</array>
+			<key>breakLaw</key>
+			<array>
+				<string>《中华人民共和国公路法》 第四十六条</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+    {{! 公路赔（补）偿结案报告 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="10.5" offset="0,0"/>
+	<pdf:content>
+        <pdf:text point="top-left:53,24" fontSize="24">公路赔（补）偿结案报告</pdf:text>
+        <pdf:text point="124,35.5">案号（</pdf:text>
+		<pdf:text point="138.5,35.5" static="NO">{{ case.mark2  }}</pdf:text>
+		<pdf:text point="150,35.5">）年（</pdf:text>
+		<pdf:text point="165.5,35.5" static="NO">{{ case.mark3 }}</pdf:text>
+		<pdf:text point="177,35.5">）号</pdf:text>
+        <pdf:table rect="{20,42},{170,209.7}" borderWidth="1.0" lineWidth="0.5" padding="1">
+            <pdf:tr height="38">
+            	<pdf:td width="15">案\n由</pdf:td>
+            	<pdf:td width="70" static="NO">{{ caseReportData.caseReason }}</pdf:td>
+            	<pdf:td width="15">案\n件\n承\n办\n人</pdf:td>
+            	<pdf:td width="35">
+                    <pdf:table rect="{0,0},{70,38}" borderWidth="0.01" lineWidth="0.5" padding="0.1">
+                        <pdf:tr height="12.67">
+                            <pdf:td width="35" textAlignment="center">姓名</pdf:td>
+                            <pdf:td width="35" textAlignment="center">证件号</pdf:td>
+                        </pdf:tr>
+                        <pdf:tr height="12.67">
+                            <pdf:td width="35" textAlignment="center" static="NO">{{ caseUserData.peopleName }}</pdf:td>
+                            <pdf:td width="35" textAlignment="center" static="NO">{{ caseUserData.peopleId }}</pdf:td>
+                        </pdf:tr>
+                        <pdf:tr height="12.67">
+                            <pdf:td width="35" textAlignment="center" static="NO">{{ caseUserData2.peopleName }}</pdf:td>
+                            <pdf:td width="35" textAlignment="center" static="NO">{{ caseUserData2.peopleId }}</pdf:td>
+                        </pdf:tr>
+                    </pdf:table>
+                </pdf:td>
+            </pdf:tr>
+            <pdf:tr height="59.6">
+                <pdf:td width="170">
+                    <pdf:text point="2,2">赔（补）偿决定：</pdf:text>
+                    <pdf:paragraph rect="{2,6},{160,50.6}" lineHeight="6" static="NO">{{ caseReportData.resultContent }}</pdf:paragraph>
+                </pdf:td>
+            </pdf:tr>
+            <pdf:tr height="52.1">
+                <pdf:td width="170">
+                    <pdf:text point="2,2">执行情况：</pdf:text>
+                    <pdf:paragraph rect="{2,6},{160,50.6}" lineHeight="6" static="NO">{{ caseReportData.executionContent }}</pdf:paragraph>
+                    <pdf:text point="91,37">承办人签字：</pdf:text>
+                    <pdf:text point="116.6,45" static="NO">{{ caseReportData.date.year }}</pdf:text>
+                    <pdf:text point="125.5,45">年</pdf:text>
+                    <pdf:text point="131.5,45" static="NO">{{ caseReportData.date.month }}</pdf:text>
+                    <pdf:text point="138.5,45">月</pdf:text>
+                    <pdf:text point="144.5,45" static="NO">{{ caseReportData.date.day }}</pdf:text>
+                    <pdf:text point="152.5,45">日</pdf:text>
+                </pdf:td>
+            </pdf:tr>
+            <pdf:tr height="60">
+                <pdf:td width="170">
+					<pdf:text point="2,2">备注:</pdf:text>
+					<pdf:paragraph rect="{2,6},{160,53}" lineHeight="6" static="NO">{{ caseReportData.remark }}</pdf:paragraph>
+				</pdf:td>
+            </pdf:tr>
+        </pdf:table>
+        <pdf:text point="top-left:21,254.5">本报告一式两份，其中一份用于向上级备案，</pdf:text>
+        <pdf:text point="top-left:21,260.5">本页填写不下的可加附纸，并在备注中说明。</pdf:text>
+	</pdf:content> 
+</pdf:template>

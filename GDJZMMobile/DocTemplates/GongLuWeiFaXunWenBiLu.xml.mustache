@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 公路违法案件 询问笔录 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="13" offset="0,0" />
+	<pdf:content>
+		<pdf:text point="83,23" fontName="SimHei" fontSize="20.5">询  问  笔  录</pdf:text>
+		
+        <pdf:line fromPoint="30,43.7" toPoint="187,43.7" lineWidth="0.8"/>
+		
+        <pdf:text point="30,54">时间</pdf:text>
+        <pdf:line fromPoint="42.5,59" toPoint="101.5,59" lineWidth="0.8"/>
+		<pdf:text point="44,54" static="NO" maxwidth="60">{{ caseInquire.date }}</pdf:text>
+        <pdf:text point="102.5,54">地点</pdf:text>
+        <pdf:line fromPoint="114,59" toPoint="188,59" lineWidth="0.8"/>
+		<pdf:text point="115.5,54" static="NO" maxWidth="72">{{ caseInquire.place }}</pdf:text>
+		
+        <pdf:text point="30,66">询问人</pdf:text>
+        <pdf:line fromPoint="49,71" toPoint="79,71" lineWidth="0.8"/>
+		<pdf:text point="50.5,66" static="NO">{{ caseInquire.inquirerName }}</pdf:text>
+		<pdf:text point="80.5,66">记录人</pdf:text>
+        <pdf:line fromPoint="98,71" toPoint="188,71" lineWidth="0.8"/>
+		<pdf:text point="100,66" static="NO" maxWidth="82">{{ caseInquire.recorderName }}</pdf:text>
+        
+        <pdf:text point="30,78.5">被询问人</pdf:text>
+        <pdf:line fromPoint="54,83.5" toPoint="80,83.5" lineWidth="0.8"/>
+		<pdf:text point="55.5,78.5" static="NO">{{ caseInquire.answererName }}</pdf:text>
+		<pdf:text point="80.5,78.5">性别</pdf:text>
+        <pdf:line fromPoint="91,83.5" toPoint="107,83.5" lineWidth="0.8"/>
+		<pdf:text point="93.5,78.5" static="NO" maxWidth="82">{{ caseInquire.answererSex }}</pdf:text>
+        <pdf:text point="109,78.5">年龄</pdf:text>
+        <pdf:line fromPoint="118,83.5" toPoint="133.5,83.5" lineWidth="0.8"/>
+		<pdf:text point="119.5,78.5" static="NO">{{ caseInquire.answererAge }}</pdf:text>
+		<pdf:text point="134.5,78.5">与案件关系</pdf:text>
+        <pdf:line fromPoint="161.5,83.5" toPoint="188,83.5" lineWidth="0.8"/>
+		<pdf:text point="163,78.5" static="NO" maxWidth="82">{{ caseInquire.answererRelation }}</pdf:text>
+        
+        <pdf:text point="30,91">工作单位及职务</pdf:text>
+        <pdf:line fromPoint="69,96" toPoint="144.5,96" lineWidth="0.8"/>
+		<pdf:text point="70.5,91" static="NO">{{ caseInquire.answererOrgDuty }}</pdf:text>
+		<pdf:text point="145.5,91">电话</pdf:text>
+        <pdf:line fromPoint="156,96" toPoint="188,96" lineWidth="0.8"/>
+		<pdf:text point="157.5,91" static="NO" maxWidth="82">{{ caseInquire.answererPhoneNum }}</pdf:text>
+        
+        <pdf:text point="30,103.5">地址</pdf:text>
+        <pdf:line fromPoint="42.5,108.5" toPoint="144.5,108.5" lineWidth="0.8"/>
+		<pdf:text point="44,103.5" static="NO">{{ caseInquire.answererAddress }}</pdf:text>
+		<pdf:text point="145.5,103.5">邮编</pdf:text>
+        <pdf:line fromPoint="156,108.5" toPoint="188,108.5" lineWidth="0.8"/>
+		<pdf:text point="157.5,103.5" static="NO" maxWidth="82">{{ caseInquire.answererPostalCode }}</pdf:text>
+        
+        <pdf:text point="30,116">问：</pdf:text>
+        <pdf:line fromPoint="41,121" toPoint="188,121" lineWidth="0.8"/>
+		<pdf:text point="42.5,133" static="NO" maxWidth="146">{{ ! }}</pdf:text>
+        
+        <pdf:paragraph rect="{30,120.5},{160,125}" indent="head:11;tail:0" lineHeight="11.75" static="NO">{{ caseInquire.inquireNote }}</pdf:paragraph>
+		<pdf:text point="30,128.5">答：</pdf:text>
+        <pdf:line fromPoint="41,133.5" toPoint="188,133.5" lineWidth="0.8"/>
+        <pdf:line fromPoint="30,146" toPoint="188,146" lineWidth="0.8"/>
+        <pdf:line fromPoint="30,158" toPoint="188,158" lineWidth="0.8"/>
+        <pdf:line fromPoint="30,171" toPoint="188,171" lineWidth="0.8"/>
+        <pdf:line fromPoint="30,183" toPoint="188,183" lineWidth="0.8"/>
+        <pdf:line fromPoint="30,195.5" toPoint="188,195.5" lineWidth="0.8"/>
+        <pdf:line fromPoint="30,208" toPoint="188,208" lineWidth="0.8"/>
+        <pdf:line fromPoint="30,221" toPoint="188,221" lineWidth="0.8"/>
+        <pdf:line fromPoint="30,233.5" toPoint="188,233.5" lineWidth="0.8"/>
+        <pdf:line fromPoint="30,246" toPoint="188,246" lineWidth="0.8"/>
+        
+        <pdf:text point="30,253">被询问人签字：</pdf:text>
+		<pdf:text point="158,253">第</pdf:text>
+        <pdf:text point="163,253" static="NO">{{ page.pageCount }}</pdf:text>
+        <pdf:text point="168,253">页共</pdf:text>
+        <pdf:text point="178,253" static="NO">{{ page.pageNum }}</pdf:text>
+        <pdf:text point="183.5,253">页</pdf:text>
+                
+	</pdf:content>
+</pdf:template>

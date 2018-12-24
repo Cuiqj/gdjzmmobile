@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record>
+	<Paper size="A4" width="210" height="297">
+        <Margin top="3"  left="3" right="3" bottom="3" />        
+        <orientation isPortrait="YES" />
+    </Paper>
+    <!--固定表格-->
+    <StaticTable>
+        <Lines>
+            <!--默认线宽-->
+            <defaultLineWidth>0.1</defaultLineWidth>
+            <!--上线-->
+            <line x1="25" y1="50" x2="185" y2="50"/>
+            <!--下线-->
+            <line x1="25" y1="250" x2="185" y2="250" />
+            <!--左边框-->
+            <line x1="25" y1="50" x2="25" y2="250" />
+            <!--右边框-->
+            <line x1="185" y1="50" x2="185" y2="250" />
+            <!--线1-->
+            <line x1="25" y1="60" x2="185" y2="60" />
+            <!--线2-->
+            <line x1="25" y1="70" x2="185" y2="70" />
+            <!--线3-->
+            <line x1="25" y1="80" x2="185" y2="80" />
+            <!--线4-->
+            <line x1="25" y1="90" x2="185" y2="90" />
+            <!--线5-->
+            <line x1="25" y1="100" x2="185" y2="100" />
+            <!--线6-->
+            <line x1="25" y1="110" x2="185" y2="110" />
+            <!--线7-->
+            <line x1="25" y1="120" x2="185" y2="120" />
+            <!--线8-->
+            <line x1="25" y1="130" x2="185" y2="130" />
+            <!--线9-->
+            <line x1="25" y1="140" x2="185" y2="140" />
+            <!--线10-->
+            <line x1="25" y1="150" x2="185" y2="150" />
+            <!--线11-->
+            <line x1="25" y1="160" x2="185" y2="160" />
+            <!--线12-->
+            <line x1="25" y1="170" x2="185" y2="170" />
+            <!--线13-->
+            <line x1="25" y1="180" x2="185" y2="180" />
+            <!--线14-->
+            <line x1="25" y1="190" x2="185" y2="190" />
+            <!--线15-->
+            <line x1="25" y1="200" x2="185" y2="200" />
+            <!--线16-->
+            <line x1="25" y1="210" x2="185" y2="210" />
+            <!--线17-->
+            <line x1="25" y1="220" x2="185" y2="220" />
+            <!--被询问人上线-->
+            <line x1="25" y1="230" x2="185" y2="230" />
+            <!--被询问人下线-->
+            <line x1="25" y1="240" x2="185" y2="240" />
+            
+       	</Lines>
+       	<Texts>
+            <defaultFontSize>19</defaultFontSize>
+            <!--标题:公路赔（补）偿案件询问笔录-->
+            <Text>
+                <text>公路赔（补）偿案件询问笔录</text>
+                <fontSize>30</fontSize>
+                <origin x="70" y="25" />
+            </Text>
+            <Text>
+            	<text>（接上页）</text>
+            	<fontSize>24</fontSize>
+            	<origin x= "93" y= "35"/>
+            </Text>
+            <Text>
+            	<text>被询问人（签名并按手印）：</text>
+            	<origin x= "26" y= "234"/>
+            </Text>
+            <Text>
+            	<text>共     页        第   页</text>
+            	<fontSize>24</fontSize>
+            	<origin x= "130" y= "244"/>
+            </Text>
+        </Texts>
+        <UILayouts>
+        	<UITextViews>
+        		<origin x="25.1" y="50.1" />
+                <size width="159.8" height="178.8" />
+                <fontSize>12</fontSize>
+                <lineHeight>29</lineHeight>>
+                <content>
+                    <data>
+                        <attributeName></attributeName>
+                        <entityName></entityName>
+                    </data>
+                </content>
+        	</UITextViews>
+        </UILayouts>
+    </StaticTable>
+    
+</record>

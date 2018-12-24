@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+    {{! 公路赔（补）偿调查报告 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="10.5" offset="4.3,7"/>
+	<pdf:content>
+        <pdf:text point="top-left:53,24" fontSize="24">公路赔（补）偿调查报告</pdf:text>
+        <pdf:text point="124,34">案号（</pdf:text>
+		<pdf:text point="139.5,34.5" static="NO">{{ case.mark2  }}</pdf:text>
+		<pdf:text point="150,34">）年（</pdf:text>
+		<pdf:text point="165,34.5" static="NO">{{ case.mark3 }}</pdf:text>
+		<pdf:text point="177,34">）号</pdf:text>
+        <pdf:table rect="{20,42},{169,219}" borderWidth="1.0" lineWidth="0.5" padding="1">
+            <pdf:tr height="33">
+            	<pdf:td width="15" textAlignment="left">案\n由</pdf:td>
+            	<pdf:td width="69.5" static="NO">{{ caseResearch.caseReason }}</pdf:td>
+            	<pdf:td width="15">
+                    姓名及证件号案件调查人员
+                </pdf:td>
+            	<pdf:td width="69.5">
+                    <pdf:table rect="{0,0},{69.5,33}" borderWidth="0.01" lineWidth="0.5" padding="1">
+                        <pdf:tr height="11">
+                            <pdf:td width="69.5" textAlignment="center" static="NO">{{ caseInvestigator.peopleNameAndId1 }}</pdf:td>
+                        </pdf:tr>
+                        <pdf:tr height="11">
+                            <pdf:td width="69.5" textAlignment="center" static="NO">{{ caseInvestigator.peopleNameAndId2 }}</pdf:td>
+                        </pdf:tr>
+                        <pdf:tr height="11">
+                            <pdf:td width="69.5" textAlignment="center" static="NO">{{ caseInvestigator.peopleNameAndId3 }}</pdf:td>
+                        </pdf:tr>
+                    </pdf:table>
+                </pdf:td>
+            </pdf:tr>
+            <pdf:tr height="33">
+                <pdf:td width="15">
+                    当事人基本情况
+                </pdf:td>
+                <pdf:td width="154">
+                    <pdf:table rect="{0,0},{154,33}" borderWidth="0.01" lineWidth="0.5" padding="1">
+                        <pdf:tr height="11">
+                            <pdf:td width="69.5">
+                                <pdf:text point="2,3">姓名：</pdf:text>
+                                <pdf:text point="15,3" static="NO">{{ caseLitigantInfo.name }}</pdf:text>
+                            </pdf:td>
+                            <pdf:td width="84.5">
+                                <pdf:text point="2,3">地址：</pdf:text>
+                                <pdf:text point="15,3" static="NO">{{ caseLitigantInfo.addr }}</pdf:text>
+                            </pdf:td>
+                        </pdf:tr>
+                        <pdf:tr height="11">
+                            <pdf:td width="69.5">
+                                <pdf:text point="2,3">单位名称：</pdf:text>
+                                <pdf:text point="23.5,3" static="NO">{{ caseLitigantInfo.companyName }}</pdf:text>
+                            </pdf:td>
+                            <pdf:td width="84.5">
+                                <pdf:text point="2,3">法定代表人：</pdf:text>
+                                <pdf:text point="27.5,3" static="NO">{{ caseLitigantInfo.orgPrincipal }}</pdf:text>
+                            </pdf:td>
+                        </pdf:tr>
+                        <pdf:tr height="11">
+                            <pdf:td width="69.5">
+                                <pdf:text point="2,3">车辆所在地：</pdf:text>
+                                <pdf:text point="27.5,3" static="NO">{{ caseLitigantInfo.automobileAddr }}</pdf:text>
+                            </pdf:td>
+                            <pdf:td width="84.5">
+                                <pdf:text point="2,3">车型、车辆号：</pdf:text>
+                                <pdf:text point="32,3" static="NO">{{ caseLitigantInfo.automobilePatternAndNumber }}</pdf:text>
+                            </pdf:td>
+                        </pdf:tr>
+                    </pdf:table>
+                </pdf:td>
+            </pdf:tr>
+            <pdf:tr height="47">
+                <pdf:td width="15">
+                    案件调查经过及结论
+                </pdf:td>
+                <pdf:td width="154">
+                    <pdf:paragraph rect="{2,2},{150,150}" lineHeight="5" static="NO">{{ caseResearch.resultContent }}</pdf:paragraph>
+                </pdf:td>
+            </pdf:tr>
+            <pdf:tr height="47">
+                <pdf:td width="15">
+                    所附证据材料
+                </pdf:td>
+                <pdf:td width="154">
+                    <pdf:paragraph rect="{2,2},{150,150}" lineHeight="6" static="NO">{{ caseResearch.material }}</pdf:paragraph>
+                </pdf:td>
+            </pdf:tr>
+            <pdf:tr height="47">
+                <pdf:td width="15">
+                    领导意见
+                </pdf:td>
+                <pdf:td width="154">
+                    <pdf:paragraph rect="{2,2},{150,150}" lineHeight="6" static="NO">{{ caseResearch.leaderOpinion }}</pdf:paragraph>
+                </pdf:td>
+            </pdf:tr>
+            <pdf:tr height="12">
+                <pdf:td width="15" textAlignment="center">备注</pdf:td>
+                <pdf:td width="154">
+                    <pdf:text point="2,3.5">（当事人是否申辩及申辩的内容等）</pdf:text>
+                </pdf:td>
+            </pdf:tr>
+        </pdf:table>
+        <pdf:text point="top-left:21,263">（本报告一式两份，其中一份用于向上级备案，本页填写不下的可加附纸）</pdf:text>
+	</pdf:content> 
+</pdf:template>

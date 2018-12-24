@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+    {{! 公路赔(补)偿清单 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="10" offset="9,3.5"/>
+	<pdf:content>
+        <pdf:text point="top-left:53,24" fontSize="24">公 路 赔 （补） 偿 清 单</pdf:text>
+        <pdf:table rect="{15,37},{155,215.5}" borderWidth="1.0" lineWidth="0.5" padding="1">
+            <pdf:tr height="11.11">
+            	<pdf:td width="16.5">当事人</pdf:td>
+            	<pdf:td width="40.5" static="NO">{{ citizen.name }}</pdf:td>
+            	<pdf:td width="12">车 型</pdf:td>
+            	<pdf:td width="28" static="NO">{{ citizen.car_model }}</pdf:td>
+            	<pdf:td width="15">车 号</pdf:td>
+            	<pdf:td width="43" static="NO">{{ citizen.car_number }}</pdf:td>
+            </pdf:tr>
+            <pdf:tr height="14">
+            	<pdf:td width="16.5">单 位</pdf:td>
+            	<pdf:td width="80.5" static="NO">{{ citizen.org }}</pdf:td>
+            	<pdf:td width="15">联系\n电话</pdf:td>
+            	<pdf:td width="43" static="NO">{{ citizen.tel }}</pdf:td>
+            </pdf:tr>
+            <pdf:tr height="15">
+            	<pdf:td width="16.5">案  发\n地  点</pdf:td>
+            	<pdf:td width="80.5" static="NO">{{ case.place }}</pdf:td>
+            	<pdf:td width="15">时 间</pdf:td>
+            	<pdf:td width="43" textAlignment="left" static="NO">{{ case.date }}</pdf:td>
+            </pdf:tr>
+            <pdf:tr height="9.8">
+            	<pdf:td width="16.5" textAlignment="center">序 号</pdf:td>
+            	<pdf:td width="51.5" textAlignment="center">项目名称</pdf:td>
+            	<pdf:td width="15" textAlignment="center">规 格</pdf:td>
+            	<pdf:td width="14" textAlignment="center">单 位</pdf:td>
+            	<pdf:td width="15" textAlignment="center">数 量</pdf:td>
+            	<pdf:td width="22" textAlignment="center">单价(元)</pdf:td>
+            	<pdf:td width="21" textAlignment="center">金额(元)</pdf:td>
+            </pdf:tr>
+            {{! 赔补偿项目列表 }}
+            {{#items}}
+            <pdf:tr height="9.8">
+            	<pdf:td width="16.5" >{{ .id }}</pdf:td>
+                <pdf:td width="51.5" textAlignment="left" static="NO">{{ .name }}</pdf:td>
+            	<pdf:td width="15" static="NO">{{ .size }}</pdf:td>
+            	<pdf:td width="14" static="NO">{{ .unit }}</pdf:td>
+            	<pdf:td width="15" static="NO">{{ .quantity }}</pdf:td>
+            	<pdf:td width="22" static="NO">{{ .unit_price }}</pdf:td>
+            	<pdf:td width="21" static="NO">{{ .total_price }}</pdf:td>
+            </pdf:tr>
+            {{/items}}
+            <pdf:tr height="9.8">
+            	<pdf:td width="16.5" textAlignment="center">合计</pdf:td>
+            	<pdf:td width="138.5" textAlignment="center">
+            		<pdf:text point="mid-left:1,5.55">人民币（大写）：</pdf:text>
+            		<pdf:text point="mid-left:35,5.55" static="NO">{{ money }} </pdf:text>
+            	</pdf:td>
+            </pdf:tr>
+            <pdf:tr height="29">
+            	<pdf:td width="16.5" textAlignment="center">备注</pdf:td>
+            	<pdf:td width="138.5" textAlignment="left" static="NO">{{ comment }}</pdf:td>
+            </pdf:tr>
+            <pdf:tr height="29">
+                <pdf:td width="155" textAlignment="left">告知事项：\n1、路政案件处理地址：中山市东升镇星月街高速公路管理中心办公楼二楼路政队\n2、办公时间：周一至周五上午9:00-11:00 15:00-16:00；\n3、办公电话（传真）：0760-22213325\n4、在交警结案前，应先办理路产索赔手续。</pdf:td>
+            </pdf:tr>
+        </pdf:table>
+        <pdf:paragraph rect="{190,108},{5,35}" textAlignment="left">第一联：路政存档</pdf:paragraph>
+        <pdf:text point="top-left:21,260.5">当事人（签名）：</pdf:text>
+        <pdf:text point="top-left:105,260.5">经办人（签名）：</pdf:text>
+	</pdf:content> 
+</pdf:template>

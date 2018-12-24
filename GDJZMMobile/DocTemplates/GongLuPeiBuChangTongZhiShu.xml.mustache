@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdf:template>
+	{{! 公路赔（补）偿通知书 }}
+	<pdf:paper width="595.276" height="841.89" fontName="SimSun" fontSize="13" offset="0,-8" />
+	<pdf:content>
+		<pdf:text point="61.5,42" fontName="SimHei" fontSize="20.5">公 路 赔 （补） 偿 通 知 书</pdf:text>
+		
+        <pdf:text point="71,54.5">（</pdf:text>
+		<pdf:text point="75,54.5" static="NO">{{ caseMark2 }}</pdf:text>
+		<pdf:text point="88,54.5">）年</pdf:text>
+		<pdf:text point="98,54.5" maxWidth="10" static="NO">{{ casePrefix }}</pdf:text>
+		<pdf:text point="106,54.5">交赔字第</pdf:text>
+		<pdf:text point="130,54.5" maxWidth="7" static="NO">{{ caseMark3 }}</pdf:text>
+		<pdf:text point="144,54.5">号</pdf:text>
+		
+        <pdf:text point="22.5,68.5">当  事  人:</pdf:text>
+        <pdf:line fromPoint="49.5,73.5" toPoint="95,73.5" lineWidth="0.8"/>
+		<pdf:text point="50,68.5" static="NO">{{ partyName }}</pdf:text>
+		
+        <pdf:text point="22.5,78.5">当事人地址:</pdf:text>
+        <pdf:line fromPoint="49.5,83.5" toPoint="139,83.5" lineWidth="0.8"/>
+		<pdf:text point="50,78.5" maxWidth="90" static="NO">{{ partyAddress }}</pdf:text>
+		
+        <pdf:text point="22.5,88.5">当事人</pdf:text>
+        <pdf:line fromPoint="38,93" toPoint="109,93" lineWidth="0.8"/>
+        <pdf:text point="39,88.5" maxWidth="71" static="NO">{{ caseReason }}</pdf:text>
+        <pdf:text point="111,88.5">一案，经</pdf:text>
+        <pdf:line fromPoint="133,93" toPoint="172,93" lineWidth="0.8"/>
+        <pdf:text point="133,88.5" maxWidth="39" static="NO">{{ agencyCity }}</pdf:text>
+        <pdf:text point="173,88.5">市（县）</pdf:text>
+        {{#notCityOrTown}}
+        <pdf:line fromPoint="173,90.5" toPoint="189,90.5" lineWidth="0.8" static="YES" />
+        {{/notCityOrTown}}
+		<pdf:line fromPoint="22.5,103" toPoint="71,103" lineWidth="0.8"/>
+		<pdf:text point="21.5,97.5" maxWidth="39" static="NO">{{ agency }}</pdf:text>
+        <pdf:text point="71.5,97.5">依法调查核实:</pdf:text>
+		
+		<pdf:text point="31,107">当事人</pdf:text>
+		<pdf:line fromPoint="47,111" toPoint="189,111" lineWidth="0.8"/>
+		<pdf:line fromPoint="22.5,120" toPoint="189,120" lineWidth="0.8"/>
+		<pdf:line fromPoint="22.5,129" toPoint="189,129" lineWidth="0.8"/>
+		<pdf:line fromPoint="22.5,138" toPoint="189,138" lineWidth="0.8"/>
+		<pdf:paragraph rect="{22.5,103},{167,40}" indent="head:25" lineHeight="8.1" static="NO">{{ caseDescription }}</pdf:paragraph>
+		
+		<pdf:text point="31.5,143">上述事实，由</pdf:text>
+		<pdf:line fromPoint="61,148" toPoint="189,148" lineWidth="0.8"/>
+		<pdf:text point="62,143" static="NO">{{ caseEvidence }}</pdf:text>
+		<pdf:text point="22.5,152.5">予以佐证。本单位认为，当事人</pdf:text>
+		<pdf:line fromPoint="89,156.5" toPoint="189,156.5" lineWidth="0.8"/>
+		<pdf:line fromPoint="22.5,166" toPoint="189,166" lineWidth="0.8"/>
+		<pdf:line fromPoint="22.5,175" toPoint="189,175" lineWidth="0.8"/>
+		<pdf:line fromPoint="22.5,184" toPoint="189,184" lineWidth="0.8"/>
+		<pdf:paragraph rect="{22.5,147},{167,40}" indent="head:68" lineHeight="8.5"  static="NO" fontSize="10">{{ payReason }}</pdf:paragraph>
+		
+		<pdf:text point="22.5,188.5">本单位依法做出如下公路赔（补）偿处理决定:</pdf:text>
+		<pdf:text point="31.5,197.5">当事人赔（补）偿</pdf:text>
+		<pdf:line fromPoint="72,201" toPoint="189,201" lineWidth="0.8"/>
+		<pdf:line fromPoint="22.5,210" toPoint="59.5,210" lineWidth="0.8"/>
+		<pdf:paragraph rect="{22.5,192},{167,22}" indent="head:50;tail:36" lineHeight="9" static="NO">{{ payDetail }}</pdf:paragraph>
+		<pdf:text point="62,206">请在收到本通知书之日起15日内持本通知书到</pdf:text>
+		<pdf:line fromPoint="156,210" toPoint="189,210" lineWidth="0.8"/>
+		<pdf:line fromPoint="22.5,219.5" toPoint="60,219.5" lineWidth="0.8"/>
+        <pdf:text point="162,206" maxWidth="28" static="NO">{{ paymentPlace1 }}</pdf:text>
+        <pdf:text point="22.5,214" maxWidth="28" static="NO">{{ paymentPlace2 }}</pdf:text>
+		<pdf:text point="60,215">获缴纳路产赔（补）偿费，逾期不缴的，本单位特申请人民法院</pdf:text>
+		<pdf:text point="21.5,224">强制执行或依法强制执行。</pdf:text>
+		<pdf:text point="31.5,233">当事人对本通知书认定的事实和赔（补）偿费有疑义的，可在收到本通知书之</pdf:text>
+		<pdf:text point="22.5,242">日起60日内，向</pdf:text>
+		<pdf:line fromPoint="58,246.5" toPoint="101,246.5" lineWidth="0.8"/>
+		<pdf:text point="59,242" static="NO">{{ reviewOrgan }}</pdf:text>
+		<pdf:text point="100.5,242">申请复核或者向人民法院起诉。</pdf:text>
+		<pdf:text point="161.5,263.5">年   月   日</pdf:text>
+        <pdf:text point="150,263" static="NO">{{year}}</pdf:text>
+        <pdf:text point="166.5,263" static="NO">{{month}}</pdf:text>
+        <pdf:text point="179,263" static="NO">{{day}}</pdf:text>
+	</pdf:content>
+</pdf:template>
